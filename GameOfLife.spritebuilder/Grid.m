@@ -165,7 +165,6 @@ static const int GRID_COLUMNS = 10;
             if (currentCreature.livingNeighbors == 3)
             {
                 [currentCreature setIsAlive:TRUE];
-                numAlive++;
             }
             else
             {
@@ -174,6 +173,11 @@ static const int GRID_COLUMNS = 10;
                 {
                     [currentCreature setIsAlive:FALSE];
                 }
+            }
+            // increment numAlive by 1 if creature is alive
+            if (currentCreature.isAlive)
+            {
+                numAlive++;
             }
         }
     }
